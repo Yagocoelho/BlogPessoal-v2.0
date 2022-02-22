@@ -1,7 +1,13 @@
 #img-bg{
-    background-image: url('https://i.pinimg.com/564x/dc/bf/01/dcbf010c2319a0820e5e70acd061f553.jpg');
+    background-image: url('https://www.kraken.com/_assets/files/2019-01/kraken_body02_final_02/768.webp');
     min-height: 695px;
     background-position: center;
     background-repeat:  no-repeat;
     background-size: cover;
+}
+button{
+    color: rgba(255, 246, 246, 0.623);
+    margin-left: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    backdrop-filter: blur(33px);
 }
