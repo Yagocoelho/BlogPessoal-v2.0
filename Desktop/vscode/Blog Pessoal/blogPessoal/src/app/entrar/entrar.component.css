@@ -5,3 +5,8 @@
     background-repeat:  no-repeat;
     background-size: cover;
 }
+button{
+    background-color: rgb(211, 43, 226);
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+}

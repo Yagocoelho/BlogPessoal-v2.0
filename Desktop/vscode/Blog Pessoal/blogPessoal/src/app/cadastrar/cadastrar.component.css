@@ -9,5 +9,5 @@ button{
     color: rgba(255, 246, 246, 0.623);
     margin-left: 15px;
     font-family: 'Courier New', Courier, monospace;
-    backdrop-filter: blur(33px);
+    border: none;
 }
