@@ -9,4 +9,8 @@ button{
     background-color: rgb(211, 43, 226);
     border: none;
     font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+}
+.col-md-6{
+    font-family: 'Courier New', Courier, monospace;
 }

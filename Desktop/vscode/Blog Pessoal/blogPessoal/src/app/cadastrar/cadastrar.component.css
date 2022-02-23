@@ -8,6 +8,8 @@
 button{
     color: rgba(255, 246, 246, 0.623);
     margin-left: 15px;
-    font-family: 'Courier New', Courier, monospace;
     border: none;
+}
+.col-md-6{
+    font-family: 'Courier New', Courier, monospace;
 }
