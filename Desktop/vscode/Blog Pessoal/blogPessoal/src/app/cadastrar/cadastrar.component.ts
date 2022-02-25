@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 
+
 @Component({
   selector: 'app-cadastrar',
   templateUrl: './cadastrar.component.html',
@@ -10,14 +11,14 @@ import { AuthService } from '../service/auth.service';
 })
 export class CadastrarComponent implements OnInit {
 
-  usuario: Usuario = new Usuario()
-  confirmarSenha :string;
-  tipoUsuarios: string;
+  usuario: Usuario = new Usuario
+  confirmarSenha: string
+  tipoUser: string
 
   constructor(
-    private authService: AuthService,//tudo que coloca dentro do construtor é injeção de dependência
+    private authService: AuthService,
     private router: Router
-  ) { }
+  ) {   }
 
   ngOnInit() {
     window.scroll(0,0)
@@ -27,22 +28,23 @@ export class CadastrarComponent implements OnInit {
     this.confirmarSenha = event.target.value
   }
 
-  tipoUsuario(event: any){
-    this.tipoUsuarios = event.target.value
+  tipoUsuario(event: any) {
+    this.tipoUser = event.target.value
   }
 
   cadastrar(){
-    this.usuario.tipo = this.tipoUsuarios
-
-    if(this.usuario.senha != this.confirmarSenha){
-      alert(' As senhas estão incorretas!')
+    this.usuario.tipo = this.tipoUser
+    
+    if (this.usuario.senha!=this.confirmarSenha){
+      alert("As senhas estão diferentes.")
     }else{
-      this.authService.cadastrar(this.usuario).subscribe((resp:Usuario)=>{
-        this.usuario = resp
+      this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+        this.usuario=resp
         this.router.navigate(['/entrar'])
-        alert('Usuário cadastrado com sucesso!')})
-      
+        alert("Usuário cadastrado com sucesso!")
+      })
     }
-
   }
+  
+
 }

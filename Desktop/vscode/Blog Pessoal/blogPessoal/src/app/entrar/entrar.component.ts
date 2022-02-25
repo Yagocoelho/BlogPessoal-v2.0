@@ -11,10 +11,10 @@ import { AuthService } from '../service/auth.service';
 })
 export class EntrarComponent implements OnInit {
 
-  usuarioLogin:  UsuarioLogin = new UsuarioLogin()
+  usuarioLogin: UsuarioLogin = new UsuarioLogin
 
   constructor(
-    private auth: AuthService,
+    private authService: AuthService, 
     private router: Router
   ) { }
 
@@ -22,8 +22,8 @@ export class EntrarComponent implements OnInit {
     window.scroll(0,0)
   }
 
-  entrar(){
-    this.auth.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin)=>{
+  entrar() {
+    this.authService.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin)=>{
       this.usuarioLogin = resp
 
       environment.token = this.usuarioLogin.token
@@ -31,15 +31,10 @@ export class EntrarComponent implements OnInit {
       environment.foto = this.usuarioLogin.foto
       environment.id = this.usuarioLogin.id
 
-      console.log(environment.token)
-      console.log(environment.nome)
-      console.log(environment.foto)
-      console.log(environment.id)
-
       this.router.navigate(['/inicio'])
-    }, erro => {
-      if (erro.status == 500){
-        alert('Usuário ou senha estão incorretos!')
+    }, erro =>{
+      if(erro.status == 500||erro.status==401){
+        alert("Usuário ou senha estão incorretos!")
       }
     })
   }
