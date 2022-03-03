@@ -1,0 +1,3 @@
+<app-menu *ngIf="auth.logado()"></app-menu>   <!-- só aparece se tiver logado-->
+<router-outlet></router-outlet>
+<app-rodape *ngIf="auth.logado()"></app-rodape>    <!-- só aparece se tiver logado-->
