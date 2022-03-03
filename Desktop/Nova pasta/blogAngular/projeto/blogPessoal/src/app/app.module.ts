@@ -1,9 +1,9 @@
-import { HttpClientModule } from '@angular/common/http'; 
+import{ HttpClientModule} from '@angular/common/http'
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HashLocationStrategy , LocationStrategy } from '@angular/common';
 
 
 import { AppComponent } from './app.component';
@@ -11,9 +11,11 @@ import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { from } from 'rxjs';
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+
 
 
 @NgModule({
@@ -24,18 +26,23 @@ import { TemaComponent } from './tema/tema.component';
     EntrarComponent,
     CadastrarComponent,
     InicioComponent,
-    TemaComponent
+    TemaComponent,
+    TemaEditComponent,
+    TemaDeleteComponent
   ],
+
   imports: [
-    
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule,  /*colocar importação manualmente */
     FormsModule
   ],
   providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
+
+provide: LocationStrategy, 
+useClass: HashLocationStrategy
+/* ajuda o angular a nao se perder nas rotas e uso de ancoras */
+
   }],
   bootstrap: [AppComponent]
 })
