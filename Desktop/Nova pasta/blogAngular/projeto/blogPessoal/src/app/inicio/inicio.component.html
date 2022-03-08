@@ -81,12 +81,12 @@
         <div class="card-columns" *ngFor="let tema of listaTemas">
           <div class="card text-center" *ngFor="let item of tema.postagem">
             <div class="card-body">
-              <h5 class="card-title m-0">{{item.titulo}}</h5>
-         
-              <p class="card-text mt-3">{{item.texto}}</p>
-              <p class="card-text"><small class="text-muted">{{item.data | date: "dd/MM/yyyy"}} às {{item.data | date: 'HH:mm'}}</small></p>
-
-              <p class="card-text"><small class="text-muted">by: {{item.usuario.nome}}</small></p>
+              <div class="card text-center" *ngFor='let item of tema.postagem'>
+                <div class="card-body">
+                    <h5 class="card-title m-0">{{item.titulo}}</h5>
+                    <p class="card-text mt-3">{{item.texto}}</p>
+                    <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</small></p>
+                    <p class="card-text"><small class="text-muted">por: {{item.usuario.nome}}.</small></p>
             </div>
           </div>
         </div>
